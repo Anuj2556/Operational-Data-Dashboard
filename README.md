@@ -6,7 +6,7 @@ A practical React dashboard for consuming operational APIs and demonstrating pro
 
 - [x] Requirements captured
 - [x] Project-local checklist created
-- [ ] React application initialized
+- [x] React application initialized
 - [ ] Dashboard implemented
 - [ ] QA completed
 - [ ] GitHub repository created
@@ -16,45 +16,45 @@ A practical React dashboard for consuming operational APIs and demonstrating pro
 
 ### 1. Project Setup
 
-- [ ] Initialize the React project
-- [ ] Configure the development and production build
-- [ ] Add client-side routing
-- [ ] Define the source folder structure
-- [ ] Add responsive layout styling
+- [x] Initialize the React project
+- [x] Configure the development and production build
+- [x] Add client-side routing
+- [x] Define the source folder structure
+- [x] Add responsive layout styling
 
 ### 2. API Client and Data
 
-- [ ] Create a dedicated API client module
-- [ ] Add list endpoint behavior
-- [ ] Add detail endpoint behavior
-- [ ] Add simulated network latency
-- [ ] Add configurable simulated failures
-- [ ] Add representative operational records
-- [ ] Define shared data types
+- [x] Create a dedicated API client module
+- [x] Add list endpoint behavior
+- [x] Add detail endpoint behavior
+- [x] Add simulated network latency
+- [x] Add configurable simulated failures
+- [x] Add representative operational records
+
 
 ### 3. Routed Pages
 
-- [ ] Create the routed list page
-- [ ] Create the routed detail page
-- [ ] Add navigation from a list row to its detail page
-- [ ] Add a back-to-list action
-- [ ] Handle an invalid or missing record
+- [x] Create the routed list page
+- [x] Create the routed detail page
+- [x] Add navigation from a list row to its detail page
+- [x] Add a back-to-list action
+- [x] Handle an invalid or missing record
 
 ### 4. List Controls
 
-- [ ] Add search
-- [ ] Add status filter
-- [ ] Add priority filter
-- [ ] Add sorting
-- [ ] Add pagination
-- [ ] Persist all active filters in URL query parameters
-- [ ] Restore filters after a browser refresh
-- [ ] Keep pagination consistent when filters change
+- [x] Add search
+- [x] Add status filter
+- [x] Add priority filter
+- [x] Add sorting
+- [x] Add pagination
+- [x] Persist all active filters in URL query parameters
+- [x] Restore filters after a browser refresh
+- [x] Keep pagination consistent when filters change
 
 ### 5. Reusable Components
 
 - [ ] Build the reusable table component
-- [ ] Build the filter bar component
+- [x] Build the filter bar component
 - [ ] Build the status badge component
 - [ ] Build the pagination component
 - [ ] Build the error panel component
@@ -62,14 +62,14 @@ A practical React dashboard for consuming operational APIs and demonstrating pro
 
 ### 6. UI States
 
-- [ ] Loading state
-- [ ] Successful data state
-- [ ] Empty results state
-- [ ] API error state
-- [ ] Retry action
-- [ ] Detail loading state
-- [ ] Detail error state
-- [ ] Detail success state
+- [x] Loading state
+- [x] Successful data state
+- [x] Empty results state
+- [x] API error state
+- [x] Retry action
+- [x] Detail loading state
+- [x] Detail error state
+- [x] Detail success state
 
 ### 7. Validation and QA
 
@@ -84,7 +84,7 @@ A practical React dashboard for consuming operational APIs and demonstrating pro
 - [ ] Verify empty results messaging
 - [ ] Verify invalid detail handling
 - [ ] Verify responsive behavior on desktop and mobile
-- [ ] Run the production build
+- [x] Run the production build
 
 ## Manual Demo Checklist
 
@@ -110,11 +110,14 @@ A practical React dashboard for consuming operational APIs and demonstrating pro
 
 ## Local Run Steps
 
-_To be completed after project initialization._
+Run these commands from the project root:
 
-```text
-Install dependencies: TBD
-Start development server: TBD
-Run production build: TBD
+```bash
+cd frontend
+npm install
+npm run dev
+npm run lint
+npm run build
 ```
-"# Operational-Data-Dashboard" 
+
+The development server usually runs at `http://localhost:5173`.
