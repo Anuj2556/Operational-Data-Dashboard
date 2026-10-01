@@ -1,0 +1,270 @@
+:root {
+  font-family: "Trebuchet MS", ui-sans-serif, system-ui, sans-serif;
+  color: #1b2925;
+  background: #efece4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    linear-gradient(135deg, rgb(255 255 255 / 70%), transparent 45%),
+    #efece4;
+}
+
+body,
+button,
+input,
+select {
+  font: inherit;
+}
+
+main {
+  width: min(100% - 2rem, 1180px);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 7vw, 6rem) 0;
+}
+
+h1 {
+  margin: 0 0 2rem;
+  color: #123f37;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 7vw, 5.25rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+p {
+  color: #53635b;
+  line-height: 1.6;
+}
+
+a {
+  color: #b45136;
+  font-weight: 700;
+}
+
+.filter-bar,
+.sort-controls {
+  display: grid;
+  grid-template-columns: minmax(14rem, 2fr) repeat(2, minmax(10rem, 1fr)) auto;
+  gap: 1rem;
+  align-items: end;
+  margin: 1.5rem 0;
+  padding: 1.35rem;
+  border: 1px solid #d7d3c8;
+  border-radius: 0.6rem;
+  background: #fffdf8;
+  box-shadow: 0 18px 40px rgb(30 42 38 / 8%);
+}
+
+.sort-controls {
+  grid-template-columns: minmax(14rem, 1fr) auto;
+  margin-top: 0;
+  border-color: transparent;
+  background: rgb(255 253 248 / 55%);
+  box-shadow: none;
+}
+
+.control-label {
+  display: grid;
+  gap: 0.45rem;
+  color: #53635b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #c9c5bb;
+  border-radius: 0.45rem;
+  color: #1e2a26;
+  background: #fff;
+}
+
+input:focus,
+select:focus,
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgb(180 81 54 / 35%);
+  outline-offset: 2px;
+}
+
+.filter-reset {
+  white-space: nowrap;
+}
+
+table {
+  width: 100%;
+  min-width: 640px;
+  margin-top: 2.5rem;
+  border-collapse: collapse;
+  background: #fffdf8;
+  box-shadow: 0 20px 48px rgb(30 42 38 / 10%);
+}
+
+th,
+td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e3ded2;
+  text-align: left;
+}
+
+th {
+  color: #1f5c53;
+  background: #e4eee8;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+tbody tr:hover {
+  background: #f8f3e9;
+}
+
+button {
+  min-height: 2.75rem;
+  padding: 0.65rem 1rem;
+  border: 0;
+  border-radius: 999px;
+  color: #fffdf8;
+  background: #1f5c53;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+button:hover {
+  background: #17463f;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  color: #53635b;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.pagination button:disabled {
+  color: #8d968f;
+  background: #d9ddd8;
+  cursor: not-allowed;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.35fr) 1fr;
+  max-width: 680px;
+  margin: 2rem 0;
+  background: #fffdf8;
+  box-shadow: 0 16px 40px rgb(30 42 38 / 8%);
+}
+
+dt,
+dd {
+  margin: 0;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e3ded2;
+}
+
+dt {
+  color: #53635b;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .filter-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .filter-bar .control-label:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .filter-reset {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 700px) {
+  main {
+    width: min(100% - 1.25rem, 1100px);
+    padding: 1.5rem 0 3rem;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  th,
+  td {
+    padding: 0.8rem 1rem;
+  }
+
+  dl {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-bar,
+  .sort-controls {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-reset {
+    width: 100%;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+  }
+
+  .pagination span {
+    order: -1;
+    width: 100%;
+    text-align: center;
+  }
+
+  .pagination button {
+    flex: 1;
+  }
+
+  dt {
+    padding-bottom: 0.35rem;
+    border-bottom: 0;
+  }
+
+  dd {
+    padding-top: 0;
+  }
+}
