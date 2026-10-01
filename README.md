@@ -2,6 +2,69 @@
 
 A practical React dashboard for consuming operational APIs and demonstrating production-style UI states.
 
+## Overview
+
+This project provides an operational records dashboard with routed list and detail views, simulated API behavior, filtering, sorting, pagination, URL-persisted filters, and reusable UI components.
+
+## Tech Stack
+
+- React
+- Vite
+- React Router
+- JavaScript and JSX
+- ESLint
+
+## Project Structure
+
+```text
+.
+├── frontend/
+│   ├── components/
+│   ├── services/
+│   └── src/
+├── README.md
+└── .gitignore
+```
+
+The application `package.json` is inside `frontend/`. Run all npm commands from that directory.
+
+## Quick Start
+
+From the project root:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open `http://localhost:5173` in your browser.
+
+## Available Commands
+
+Run these commands from `frontend/`:
+
+```bash
+npm run dev      # Start the development server
+npm run lint     # Run ESLint
+npm run build    # Create a production build
+npm run preview  # Preview the production build
+```
+
+## Main Routes
+
+- `/` - Operational records dashboard
+- `/record/:id` - Record details
+
+## Demo Scenarios
+
+- Apply search, status, and priority filters
+- Refresh the page and confirm filters remain in the URL
+- Sort records and move between pages
+- Open a record detail page
+- Open `/record/999` to demonstrate the invalid-record error state
+- Temporarily call `fetchRecords({ shouldFail: true })` to demonstrate API failure and retry
+
 ## Project Status
 
 - [x] Requirements captured
@@ -53,11 +116,11 @@ A practical React dashboard for consuming operational APIs and demonstrating pro
 
 ### 5. Reusable Components
 
-- [ ] Build the reusable table component
+- [x] Build the reusable table component
 - [x] Build the filter bar component
-- [ ] Build the status badge component
-- [ ] Build the pagination component
-- [ ] Build the error panel component
+- [x] Build the status badge component
+- [x] Build the pagination component
+- [x] Build the error panel component
 - [ ] Keep component APIs reusable and clearly typed
 
 ### 6. UI States
@@ -73,17 +136,17 @@ A practical React dashboard for consuming operational APIs and demonstrating pro
 
 ### 7. Validation and QA
 
-- [ ] Verify search results
-- [ ] Verify status filtering
-- [ ] Verify priority filtering
+- [x] Verify search results
+- [x] Verify status filtering
+- [x] Verify priority filtering
 - [ ] Verify sorting in both directions where applicable
-- [ ] Verify pagination controls and page boundaries
-- [ ] Verify list-to-detail navigation
-- [ ] Verify URL query parameters survive refresh
+- [x] Verify pagination controls and page boundaries
+- [x] Verify list-to-detail navigation
+- [x] Verify URL query parameters survive refresh
 - [ ] Verify retry behavior after a simulated failure
 - [ ] Verify empty results messaging
-- [ ] Verify invalid detail handling
-- [ ] Verify responsive behavior on desktop and mobile
+- [x] Verify invalid detail handling
+- [x] Verify responsive behavior on desktop and mobile
 - [x] Run the production build
 
 ## Manual Demo Checklist
