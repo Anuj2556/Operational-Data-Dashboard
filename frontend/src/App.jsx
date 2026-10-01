@@ -9,6 +9,10 @@ import {
 import { fetchRecords, fetchRecordById } from "../services/api";
 
 import FilterBar from "../components/FilterBar";
+import StatusBadge from "../components/StatusBadge";
+import Pagination from "../components/Pagination";
+import ErrorPanel from "../components/ErrorPanel";
+import RecordsTable from "../components/RecordsTable";
 
 function DashboardPage() {
   const [records, setRecords] = useState([]);
@@ -62,8 +66,7 @@ function DashboardPage() {
       <main>
         <main>
           <h1>Operational Dashboard</h1>
-          <p>{error}</p>
-          <button onClick={loadRecords}>Retry</button>
+          <ErrorPanel msg={error} onRetry={loadRecords} />
         </main>
       </main>
     );
@@ -157,56 +160,14 @@ function DashboardPage() {
       </section>
 
       <h1>Operational Dashboard</h1>
+
       {visibleRecords.length === 0 ? (
-        <p>No Records found. </p>
+        <p>No Records found.</p>
       ) : (
-        <table>
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Owner</th>
-              <th>Status</th>
-              <th>Priority</th>
-            </tr>
-          </thead>
-          <tbody>
-            {visibleRecords.map((record) => (
-              <tr key={record.id}>
-                <td>
-                  <Link to={`/record/${record.id}`}>{record.title}</Link>
-                </td>
-                <td>{record.owner}</td>
-                <td>{record.status}</td>
-                <td>{record.priority}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <RecordsTable visibleRecords={visibleRecords} />
       )}
 
-      {sortedRecords.length > 0 && (
-        <nav className="pagination" aria-label="Pagination">
-          <button
-            type="button"
-            disabled={page === 1}
-            onClick={() => setPage((currPage) => currPage - 1)}
-          >
-            Previous
-          </button>
-
-          <span>
-            Page {page} of {totalPages}
-          </span>
-
-          <button
-            type="button"
-            disabled={page === totalPages}
-            onClick={() => setPage((currPage) => currPage + 1)}
-          >
-            Next
-          </button>
-        </nav>
-      )}
+      <Pagination page={page} totalPages={totalPages} setPage={setPage} />
     </main>
   );
 }
@@ -250,10 +211,11 @@ function DetailsPage() {
       <main>
         <main>
           <h1>Operational Dashboard</h1>
-          <p>{error}</p>
-          <button onClick={loadRecord}>Retry</button>
-          <br />
-          <Link to="/">Back to dashboard</Link>
+          <ErrorPanel
+            msg={error}
+            onRetry={loadRecord}
+            backLink={<Link to="/">Back to Dashboard</Link>}
+          />
         </main>
       </main>
     );

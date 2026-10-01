@@ -215,11 +215,14 @@ dt {
   table {
     display: block;
     overflow-x: auto;
+    min-width: 0;
+    table-layout: fixed;
   }
 
   th,
   td {
     padding: 0.8rem 1rem;
+    overflow-wrap: anywhere;
   }
 
   dl {
@@ -267,4 +270,45 @@ dt {
   dd {
     padding-top: 0;
   }
+}
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status-in-progress {
+  color: #795400;
+  background: #f8e4a8;
+}
+
+.status-completed {
+  color: #176044;
+  background: #ccebdc;
+}
+
+.status-blocked {
+  color: #8d302d;
+  background: #f5cbc5;
+}
+.error-panel {
+  max-width: 36rem;
+  padding: 1.5rem;
+  border: 1px solid #e4b6ae;
+  border-radius: 0.6rem;
+  background: #fff4f1;
+}
+
+.error-panel h2 {
+  margin-top: 0;
+  color: #8d302d;
+}
+
+.error-panel div {
+  margin-top: 1rem;
 }
